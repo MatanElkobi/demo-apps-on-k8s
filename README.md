@@ -1,6 +1,6 @@
 # Demo Application: BookStore App services on K8S 
 
-Follows micro-services approach. Run locally using docker-compose and traefik as loadbalancer/proxy; and on Kubernetes (DigitalOcean Managed).
+Follows micro-services approach. Run locally using docker-compose and traefik as loadbalancer/proxy; and on Kubernetes.
 
 > ## Announcement: Course on Kubernetes
 > If you're want to start deploying your containers to Kubernetes, especially on AWS EKS, [check this course on Kubernetes](https://courses.devteds.com/kubernetes-get-started) that walkthrough creating Kubernetes cluster on AWS EKS using Terraform and deploying multiple related containers applications to Kubernetes and more. https://courses.devteds.com/kubernetes-get-started
@@ -51,18 +51,14 @@ open http://localhost
 
 ## On Kubernetes
 
-Create Kubernetes cluster on DigitalOcean
-
-### DigitalOcean API Token
-
-Signup/Login to DigitalOcean and genereate API Token
+Create Kubernetes cluster on AWS EKS 
 
 ### Create Kubernetes Cluster
 
 ```
 cd ~/proj/demo-apps-on-k8s/infra
 cp secret.auto.example.tfvars secret.auto.tfvars
-# edit to assign DigitalOcean API token and save
+
 ```
 
 Optionally edit `main.tf` as needed. For example, if you need to change the region or number of worker nodes or kubernetes version
@@ -73,7 +69,6 @@ terraform plan
 terraform apply
 ```
 
-You may login to DigitalOcean and verify Kubernetes status.
 
 Update `kubeconfig` for `kubectl`
 
